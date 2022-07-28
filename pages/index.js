@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`http://localhost:3000/api/hello`);
+  const res = await fetch(`${process.env.SERVER_URL}/api/hello`);
   const json = await res.json();
 
   // Pass data to the page via props
