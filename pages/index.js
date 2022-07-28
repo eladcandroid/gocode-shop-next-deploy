@@ -14,13 +14,13 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ helloFromSSR }) {
-  // const [hello, setHello] = useState("");
+  const [hello, setHello] = useState("");
 
-  // useEffect(() => {
-  //   fetch("/api/hello")
-  //     .then((res) => res.json())
-  //     .then((json) => setHello(json));
-  // }, []);
+  useEffect(() => {
+    fetch("/api/hello")
+      .then((res) => res.json())
+      .then((json) => setHello(json));
+  }, []);
 
   return (
     <div className={styles.container}>
